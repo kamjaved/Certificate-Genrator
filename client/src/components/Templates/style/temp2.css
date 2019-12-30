@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "CloisterBlack";
+  src: url("../../fonts/CloisterBlack.ttf");
+}
+@font-face {
+  font-family: "Giveny";
+  src: url("../../fonts/Giveny.ttf");
+}
+@font-face {
+  font-family: "Muli-Bold";
+  src: url("../../fonts/muli/Muli-Bold.ttf");
+}
+
+.H1 {
+  font-family: CloisterBlack;
+  font-size: 70px;
+  color: rgb(22, 22, 22);
+  text-shadow: 2px 2px 10px rgb(78, 76, 74);
+}
+.H3 {
+  font-family: Giveny;
+  font-size: 18px;
+  font-stretch: expanded;
+  color: #c9a504;
+  text-shadow: black 1px 1px;
+  letter-spacing: 1px;
+}
+
+.topdivmain {
+  width: 281.5mm;
+  height: 215mm;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #787878;
+  background-color: rgb(247, 211, 8);
+}
+.borderMain {
+  position: relative;
+  padding: auto 10px;
+  height: 204mm;
+  width: 270mm;
+  text-align: center;
+  background-image: url("../../images/back2.png");
+  border: 10px solid #c9a504;
+  z-index: 1;
+}
+/*   background-color:#FAF4DC;*/
+.borderdotted {
+  margin: 15px;
+  height: 192mm;
+  text-align: center;
+}
+.container1 {
+  margin: 30px;
+  height: 190mm;
+  text-align: center;
+}
+.flexbox_1 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.flexbox_2 {
+  position: absolute;
+  height: 204.2mm;
+  width: 272mm;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+.bottom {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.borderbottom1 {
+  width: 200px;
+  float: left;
+  border: 0;
+  border-bottom: 2px solid #000;
+  margin-right: 8px;
+}
+.borderbottom2 {
+  width: 200px;
+  float: right;
+  border: 0;
+  border-bottom: 2px solid #000;
+  margin-left: 8px;
+}
