@@ -38,7 +38,7 @@ const Login = ({ login, isAuthenticated }) => {
             <form onSubmit={e => onSubmitHandler(e)}>
                 <section className="login py-5 border-top-1">
                     <div className="container">
-                        <div className="row justify-content-center animated fadeInRight">
+                        <div className="row justify-content-center animated fadeIn">
                             <div className="col-lg-5 col-md-8 align-item-center">
                                 <div className="bg-light border border-primary">
                                     <h3 className="bg-primary text-center text-white p-4">Login Now</h3>

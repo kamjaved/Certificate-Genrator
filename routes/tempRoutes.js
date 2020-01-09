@@ -10,16 +10,17 @@ router.use(authController.protect);
 
 //Restrict all router after this middleware to admin only- Authorization
 
+router.use(authController.restrictTo("admin"));
 router
     .route("/")
-    .post(templateController.createTemplate)
-    .get(templateController.getAllTemplates) // restrict to admin only
-// router.use(authController.restrictTo("admin"));
+    .post(templateController.createUserTemplate)
+    .get(templateController.getUserGenratedTemp)
+
 
 router
     .route("/:id")
     .get(templateController.getTemplate)
     .patch(templateController.updateTemplate)
-    .delete(authController.restrictTo("admin"), templateController.deleteTemplate);
+    .delete(templateController.deleteTemplate);
 
 module.exports = router;

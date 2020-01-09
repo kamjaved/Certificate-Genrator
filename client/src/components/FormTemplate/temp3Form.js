@@ -1,13 +1,13 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import '../UI/Dashboard.css'
-import template1 from '../images/Cert1.png';
+import template3 from '../images/Cert3.png';
 import { withRouter } from 'react-router-dom';
 
 import PropTypes from "prop-types";
 
 import { Helmet } from 'react-helmet';
 import { connect } from "react-redux";
-import { saveformData1 } from "../../_actions/templateAction";
+import { saveformData3 } from "../../_actions/templateAction";
 import { getStudents } from "../../_actions/studentAction";
 import { getCourses } from "../../_actions/courseAction";
 
@@ -15,7 +15,7 @@ import { getCourses } from "../../_actions/courseAction";
 const Template = ({
 
     companyName, logoURL, regisNo, user,
-    saveformData1, history, students, getCourses, getStudents, courses
+    saveformData3, history, students, getCourses, getStudents, courses
 }) => {
 
     const [formData, setFormData] = useState({
@@ -54,7 +54,7 @@ const Template = ({
 
     const onSubmitHandler = e => {
         e.preventDefault();
-        saveformData1(formData, history);
+        saveformData3(formData, history);
         // formsubmit();
     };
 
@@ -89,14 +89,14 @@ const Template = ({
 
     return (
         <Fragment>
-            <Helmet><title>Template 1- Globus Labs</title></Helmet>
+            <Helmet><title>Template 3- Globus Labs</title></Helmet>
             <section className="container-fluid">
 
                 {/*-- Modal Body Starts  -*/}
                 <div className="row ">
                     <div className="container bg-light col-lg-5 col-md-8 align-item-center animated fadeIn">
                         <form onSubmit={onSubmitHandler} className="">
-                            <h2 className="bg-light p-4 text-center"> Simple Yellow</h2>
+                            <h2 className="bg-light p-4 text-center">Golden Premium</h2>
                             <fieldset className="p-4">
                                 <div className="form-row">
                                     <div className="form-group col-sm-4">
@@ -203,7 +203,7 @@ const Template = ({
                     <div className="container bg-light col-lg-4 col-md-4 align-item-center animated fadeIn ">
 
                         <h2 className="bg-light p-4 text-center">Certificate Preview</h2>
-                        <img src={template1} className="card-img-top img-fluid" />
+                        <img src={template3} className="card-img-top img-fluid" />
 
                     </div>
                 </div>
@@ -215,7 +215,7 @@ const Template = ({
     )
 }
 Template.propTypes = {
-    saveformData1: PropTypes.func.isRequired,
+    saveformData3: PropTypes.func.isRequired,
     getStudents: PropTypes.func.isRequired,
     getCourses: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
@@ -234,4 +234,4 @@ const mapStateToProps = state => ({
 });
 
 
-export default connect(mapStateToProps, { saveformData1, getStudents, getCourses })(withRouter(Template))
+export default connect(mapStateToProps, { saveformData3, getStudents, getCourses })(withRouter(Template))

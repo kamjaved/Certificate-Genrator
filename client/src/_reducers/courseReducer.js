@@ -1,52 +1,52 @@
 import * as types from "./../_actions/types";
 
-const initialStudent = {
-    student: null,
-    students: [],
+const initialCourse = {
+    course: null,
+    courses: [],
     error: {},
     filtered: null,
     loading: true
 };
 
-export default function (student = initialStudent, action) {
+export default function (course = initialCourse, action) {
     const { type, payload } = action;
 
     switch (type) {
-        case types.GET_STUDENT:
+        case types.GET_COURSE:
             return {
-                ...student,
-                student: payload,
+                ...course,
+                course: payload,
                 loading: false
             };
-        case types.GET_STUDENTS:
+        case types.GET_COURSES:
             return {
-                ...student,
-                students: payload,
+                ...course,
+                courses: payload,
                 loading: false
             };
-        case types.ADD_STUDENT:
+        case types.ADD_COURSE:
             return {
-                ...student,
-                student: payload,
+                ...course,
+                course: payload,
                 loading: false
             };
-        case types.SET_CURRENT_STUDENT:
+        case types.SET_CURRENT_COURSE:
             return {
-                ...student,
-                student: action.payload
+                ...course,
+                course: action.payload
             };
-        case types.CLEAR_STUDENT:
+        case types.CLEAR_COURSE:
             return {
-                ...student,
-                student: null,
-                students: [],
+                ...course,
+                course: null,
+                courses: [],
                 loading: false
             };
 
         // case types.FILTER_STAFF:
         //   return {
-        //     ...student,
-        //     filtered: student.students.filter(student => {
+        //     ...course,
+        //     filtered: course.courses.filter(course => {
         //       const regex = new RegExp(`${action.payload}`, "gi");
         //       return (
         //         staff.firstName.match(regex) ||
@@ -59,24 +59,24 @@ export default function (student = initialStudent, action) {
         //   };
         case types.CLEAR_FILTER:
             return {
-                ...student,
+                ...course,
                 filtered: null
             };
-        case types.DELETE_STUDENT:
+        case types.DELETE_COURSE:
             return {
-                ...student,
-                students: student.students.filter(
-                    student => student._id !== action.payload
+                ...course,
+                courses: course.courses.filter(
+                    course => course._id !== action.payload
                 ),
                 loading: false
             };
-        case types.STUDENT_ERROR:
+        case types.COURSE_ERROR:
             return {
-                ...student,
+                ...course,
                 error: payload,
                 loading: false
             };
         default:
-            return student;
+            return course;
     }
 }

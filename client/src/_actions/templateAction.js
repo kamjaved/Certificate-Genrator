@@ -29,8 +29,8 @@ export const getCurrentTemplate = id => async dispatch => {
 //Get all template
 export const getTemplates = (page) => async dispatch => {
     try {
-        const res = await axios.get(`/api/temp/?page=${page}`);
-        console.log(res.data);
+        const res = await axios.get("/api/temp");
+        console.log(res.data.data);
         dispatch({
             type: types.GET_TEMPLATES,
             payload: res.data.data
@@ -46,10 +46,10 @@ export const getTemplates = (page) => async dispatch => {
 
 
 // Add Template
-export const addTemplate = (formData, history) => async dispatch => {
-    console.log(formData);
+export const addTemplate = (state) => async dispatch => {
+    console.log(state);
     try {
-        const res = await axios.post("/api/temp", formData);
+        const res = await axios.post("/api/temp", state);
         dispatch({
             type: types.ADD_TEMPLATE,
             payload: res.data
@@ -64,27 +64,76 @@ export const addTemplate = (formData, history) => async dispatch => {
     }
 };
 // -----SAVE FORMDATA TEMPLATE --------
-export const saveformData = (formData, history) => async dispatch => {
+export const saveformData1 = (formData, history) => async dispatch => {
 
     console.log(formData);
     try {
         const res = await (formData);
         console.log(res);
         dispatch({
-            type: types.SAVE_FORMDATA,
+            type: types.SAVE_FORMDATA1,
             payload: res
         });
 
-        const timer = setTimeout(() => {
-            history.push("/certificate/view-template1");
-        }, 3000)
-        return () => clearTimeout(timer);
-    } catch (err) {
+        history.push("/certificate/view-template1");
 
+
+        // const timer = setTimeout(() => {
+        //     // history.push("/certificate/view-template1");
+        // }, 3000)
+        // return () => clearTimeout(timer);
+    } catch (err) {
+        console.log(err)
 
     }
 };
+// -----SAVE FORMDATA TEMPLATE 2 --------
+export const saveformData2 = (formData, history) => async dispatch => {
 
+    console.log(formData);
+    try {
+        const res = await (formData);
+        console.log(res);
+        dispatch({
+            type: types.SAVE_FORMDATA2,
+            payload: res
+        });
+
+        history.push("/certificate/view-template2");
+
+
+        // const timer = setTimeout(() => {
+        //     // history.push("/certificate/view-template1");
+        // }, 3000)
+        // return () => clearTimeout(timer);
+    } catch (err) {
+        console.log(err)
+
+    }
+};// -----SAVE FORMDATA TEMPLATE 3 --------
+export const saveformData3 = (formData, history) => async dispatch => {
+
+    console.log(formData);
+    try {
+        const res = await (formData);
+        console.log(res);
+        dispatch({
+            type: types.SAVE_FORMDATA3,
+            payload: res
+        });
+
+        history.push("/certificate/view-template3");
+
+
+        // const timer = setTimeout(() => {
+        //     // history.push("/certificate/view-template1");
+        // }, 3000)
+        // return () => clearTimeout(timer);
+    } catch (err) {
+        console.log(err)
+
+    }
+};
 //Genrate Certficate 
 export const genrateTemp1 = (tempformdata, history) => async (dispatch) => {
     dispatch({

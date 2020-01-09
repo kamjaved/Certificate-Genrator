@@ -16,7 +16,8 @@ const app = express();
 
 const userRouter = require('./routes/userRoutes')
 const tempRouter = require('./routes/tempRoutes')
-
+const studentRoutes = require('./routes/studentRoutes')
+const courseRoutes = require('./routes/courseRoutes')
 
 
 const DB =
@@ -82,6 +83,8 @@ app.use(compression());
 
 app.use("/api/user", userRouter);
 app.use("/api/temp", tempRouter);
+app.use('/api/student', studentRoutes)
+app.use('/api/course', courseRoutes)
 
 
 

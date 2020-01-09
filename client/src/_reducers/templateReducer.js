@@ -5,6 +5,8 @@ const initialState = {
     templates: [],
     temp1State: {},
     Temp1formData: {},
+    Temp2formData: {},
+    Temp3formData: {},
     username: null,
     companyName: null,
     error: {},
@@ -42,10 +44,25 @@ export default function (state = initialState, action) {
                 temp1State: payload,
 
             }
-        case types.SAVE_FORMDATA:
+        case types.SAVE_FORMDATA1:
             return {
                 ...state,
                 Temp1formData: payload,
+                companyName: payload.companyName,
+                username: payload.username
+            }
+        case types.SAVE_FORMDATA2:
+            return {
+                ...state,
+                Temp2formData: payload,
+                companyName: payload.companyName,
+                username: payload.username
+            }
+
+        case types.SAVE_FORMDATA3:
+            return {
+                ...state,
+                Temp3formData: payload,
                 companyName: payload.companyName,
                 username: payload.username
             }

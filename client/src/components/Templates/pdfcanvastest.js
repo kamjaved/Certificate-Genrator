@@ -70,3 +70,88 @@ class App extends React.Component {
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
+
+
+import React, { Fragment, useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+// import { clearTemplate } from '../../_actions/templateAction';
+import PropTypes from "prop-types";
+
+
+export const Template1 = ({
+  Temp1formData,
+  template, auth
+  //companyName, username
+}) => {
+  const [state, setState] = useState({
+    companyName: "",
+    username: "",
+    course: ""
+    // studentid: "",
+    // score: "",
+    // course: "",
+    // date: "",
+    // logoURL: "",
+    // regisNo: " ",
+
+
+  })
+
+
+  console.log(auth) //UNDEFINED BATA RAHA YE BHI
+
+  useEffect(() => {
+    setState({
+      companyName: Temp1formData && Temp1formData.companyName,
+      username: Temp1formData && Temp1formData.username,
+      // studentid: Temp1formData.studentid,
+      // score: Temp1formData.score,
+      course: Temp1formData && Temp1formData.course,
+      // date: Temp1formData.date,
+      // logoURL: Temp1formData.logoURL,
+      // regisNo: Temp1formData.regisNo
+    })
+
+
+  }, [Temp1formData])
+
+
+  const { companyName,
+    username, course } = state
+
+  // const onClickHandler = () => {
+  //     setState({
+  //         companyName: Temp1formData.companyName,
+  //         username: Temp1formData.username,
+  //         studentid: Temp1formData.studentid,
+  //         score: Temp1formData.score,
+  //         course: Temp1formData.course,
+  //         date: Temp1formData.date,
+  //         logoURL: Temp1formData.logoURL,
+  //         regisNo: Temp1formData.regisNo
+  //     })
+  //     console.log(Temp1formData)
+
+  // }
+  return (
+    <Fragment>
+
+      <h1>{companyName}{username} {course}</h1>
+    </Fragment>
+  )
+};
+
+Template1.propTypes = {
+  Temp1formData: PropTypes.object.isRequired,
+  template: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired,
+}
+const mapStateToProps = state => ({
+  Temp1formData: state.template.Temp1formData,
+  template: state.template,
+  auth: state.auth.user,
+  companyName: state.template.companyName,
+  username: state.template.username
+})
+export default connect(mapStateToProps)(Template1);

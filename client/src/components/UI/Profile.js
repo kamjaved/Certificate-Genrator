@@ -21,13 +21,13 @@ const Profile = ({
     });
 
     const [photoData, setPhotoData] = useState({
-        companyName: "",
-        email: "",
-        phone: "",
-        address: "",
-        city: "",
-        logoURL: "",
-        regisNo: "",
+        companyName: companyName,
+        email: user.email,
+        phone: user.phone,
+        address: user.address,
+        city: user.city,
+        logoURL: logoURL,
+        regisNo: regisNo,
     });
 
     const onChangePhotoHandler = e => {

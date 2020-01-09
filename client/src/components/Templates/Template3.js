@@ -3,14 +3,13 @@ import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import { addTemplate } from '../../_actions/templateAction'
-import border3 from '.././images/border3.png'
+import backImage from '.././images/certificateback2.jpg'
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import './style/temp1.css'
+import './style/temp3.css'
 
-
-const Template1 = ({
-    Temp1formData,
+const Template3 = ({
+    Temp3formData,
     addTemplate
 }) => {
 
@@ -30,20 +29,21 @@ const Template1 = ({
 
     })
 
+
     useEffect(() => {
         setState({
-            companyName: Temp1formData && Temp1formData.companyName,
-            username: Temp1formData && Temp1formData.username,
-            studentid: Temp1formData.studentid,
-            score: Temp1formData.score,
-            course: Temp1formData && Temp1formData.course,
-            date: Temp1formData.date,
-            logoURL: Temp1formData.logoURL,
-            regisNo: Temp1formData.regisNo
+            companyName: Temp3formData && Temp3formData.companyName,
+            username: Temp3formData && Temp3formData.username,
+            studentid: Temp3formData.studentid,
+            score: Temp3formData.score,
+            course: Temp3formData && Temp3formData.course,
+            date: Temp3formData.date,
+            logoURL: Temp3formData.logoURL,
+            regisNo: Temp3formData.regisNo
         })
 
 
-    }, [Temp1formData])
+    }, [Temp3formData])
 
 
     const { companyName,
@@ -64,14 +64,13 @@ const Template1 = ({
     const handleDownloadPDF = () => {
         addTemplate(state);
         const image = document.getElementById('topdivmain');
-
         html2canvas(image).then((canvas) => {
             const imgData = canvas.toDataURL("image/png");
             const pdf = new jsPDF({
                 orientation: 'landscape',
                 format: "letter"
             });
-            pdf.addImage(imgData, "PNG", 3, 3, 272, 207);
+            pdf.addImage(imgData, "PNG", 2, 2, 272, 207);
             pdf.save("downloadedPdf.pdf");
 
         })
@@ -92,22 +91,19 @@ const Template1 = ({
             </section><br /><br />
 
             <section className="container pb-4">
-                <div className="topdivmainT1" id="topdivmain">
-                    <img src={border3} className="flexbox_2T1" />
-                    <div className="borderMainT1">
-                        <div className="borderdottedT1">
-                            <div className="container1T1">
-                                <div className="flexbox_1T1">
-                                    <img src={logoURL} />
-                                </div>
+                <div className="topdivmainT3" id="topdivmain">
+                    <img src={backImage} className="flexbox_2T3" />
+                    <div className="borderMainT3">
+                        <div className="borderdottedT3">
+                            <div className="container1T3">
+
                                 <br />
-                                <span className="H1T1">Certificate of Achievement </span>
+                                <span className="H1T3">Certificate of Achievement </span>
                                 <br />
-                                <br />
-                                <span className="H3T1">
+                                <span className="H3T3">
                                     THIS CERTITICATE IS PROUDLY <br />
                                     PRESENTED FOR HONORABLY ACHIEVEMENT TO
-              </span>
+      </span>
                                 <br />
                                 <br />
                                 <span style={{ fontSize: 30, textTransform: "uppercase" }}>
@@ -115,33 +111,33 @@ const Template1 = ({
                                 </span>
                                 <br />
                                 <br />
-                                <span className="H3T1">
+                                <span className="H3T3">
                                     HAS COMPLETED THE COURSE
-              </span>
+      </span>
 
                                 <br />
-                                <span style={{ fontSize: 30 }}>{course} </span>
+                                <span className="H4T3" style={{ fontSize: 30 }}><b>{course}</b></span>
                                 <br />
                                 <br />
-                                <span style={{ fontSize: 20 }}
-                                >with score of
-                <b>{score}% </b>
+                                <span className="H4T3" style={{ fontSize: 20 }}
+                                >with score of-
+                                        <b>{score}% </b>
                                 </span>
 
                                 <br />
                                 <br />
-                                <span className="H3T1">
+                                <span className="H3T3">
                                     AWARDED THIS DAY OF
-              </span>
+      </span>
                                 <br />
-                                <span>
+                                <span className="H4T3" style={{ fontSize: 25 }}>
                                     <i
                                     >{date}
                                     </i>
                                 </span>
                                 <br />
 
-                                <div className="bottom">
+                                <div className="bottomT3">
                                     <table style={{ marginTop: 10, float: "left" }}>
                                         <tbody>
                                             <tr>
@@ -153,13 +149,13 @@ const Template1 = ({
                                             </tr>
                                             <tr>
                                                 <td
-                                                    className="borderbottom1T1"
+                                                    className="borderbottom1T3"
                                                 ></td>
                                             </tr>
                                             <tr>
                                                 <td style={{ textAlign: "center" }}>
                                                     <span>
-                                                        <b>Student ID</b>
+                                                        <b>Student ID </b>
                                                     </span>
                                                 </td>
                                             </tr>
@@ -176,7 +172,7 @@ const Template1 = ({
                                             </tr>
                                             <tr>
                                                 <td
-                                                    className="borderbottom2T1"
+                                                    className="borderbottom2T3"
                                                 ></td>
                                             </tr>
                                             <tr>
@@ -189,6 +185,9 @@ const Template1 = ({
                                         </tbody>
                                     </table>
                                 </div>
+                                <div className="flexbox_1">
+                                    <img src={logoURL} />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -199,15 +198,14 @@ const Template1 = ({
     )
 }
 
-Template1.propTypes = {
+Template3.propTypes = {
     addTemplate: PropTypes.func.isRequired,
-    Temp1formData: PropTypes.object.isRequired,
+    Temp3formData: PropTypes.object.isRequired,
 
 }
 const mapStateToProps = state => ({
-    Temp1formData: state.template.Temp1formData,
+    Temp3formData: state.template.Temp3formData,
 
 })
-export default connect(mapStateToProps, { addTemplate })(Template1);
+export default connect(mapStateToProps, { addTemplate })(Template3);
 
-//`${today.getDate()}. ${today.getMonth() + 1}.${today.getFullYear()}.`

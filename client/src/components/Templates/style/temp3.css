@@ -1,50 +1,52 @@
 @font-face {
-  font-family: "Choppin";
-  src: url("../../fonts/ChopinScript.ttf");
-}
-@font-face {
-  font-family: "alssrp";
-  src: url("../../fonts/alsscrp.ttf");
-}
-@font-face {
   font-family: "BigNoodle";
   src: url("../../fonts/big_noodle_titling.ttf");
 }
+@font-face {
+  font-family: "Giveny";
+  src: url("../../fonts/Giveny.ttf");
+}
+@font-face {
+  font-family: "Giveny-Italic";
+  src: url("../../fonts/Giveny Italic.ttf");
+}
 
-.H1T2 {
-  font-family: Choppin;
-  font-size: 62px;
+.H1T3 {
+  padding-top: 5px;
+  font-family: BigNoodle;
+  font-size: 55px;
   color: rgb(22, 22, 22);
 }
-.HeadingT2 {
+.HeadingT3 {
   margin-top: 33px;
   /* border: 2px solid red; */
 }
-.H3T2 {
-  font-family: alssrp;
-  font-size: 18px;
+.H3T3 {
+  font-family: Giveny;
+  font-size: 19px;
   font-stretch: expanded;
-  color: #9e0303;
+  color: #c9a504;
+  text-shadow: black 1px 1px;
   font-weight: 600;
   letter-spacing: 1px;
 }
-.contentT2 {
+.contentT3 {
   margin-top: 2px;
   margin-bottom: 8px;
 }
-.H4T2 {
-  font-family: Choppin;
+.H4T3 {
+  font-family: Giveny-Italic;
   font-size: 12px;
   font-stretch: expanded;
   color: black;
 }
-.topdivmainT2 {
+.topdivmainT3 {
   width: 281.5mm;
   height: 215mm;
   text-align: center;
 }
 
-.borderMainT2 {
+.borderMainT3 {
   position: relative;
   padding: auto 10px;
   height: 210mm;
@@ -55,7 +57,7 @@
 }
 /*   background-color:#FAF4DC;*/
 
-.flexbox_2T2 {
+.flexbox_2T3 {
   position: absolute;
   width: 275.5mm;
   height: 210mm;
@@ -63,42 +65,43 @@
   justify-content: center;
   z-index: 1;
 }
-.borderdottedT2 {
+.borderdottedT3 {
   margin: 15px;
   height: 192mm;
   text-align: center;
 }
-.container1T2 {
+
+.container1T3 {
   margin: 55px;
   text-align: center;
   padding: 5px 30px;
 }
-.flexbox_1T2 img {
-  margin-top: 18px;
+.flexbox_1T3 img {
+  margin-top: 10px;
   max-width: 130px;
   max-height: 60px;
   display: inline-block;
   justify-content: center;
 }
 
-.bottomT2 {
-  margin-top: 55px;
+.bottomT3 {
+  margin-top: 10px;
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.borderbottom1T2 {
+.borderbottom1T3 {
   width: 200px;
   float: left;
   border: 0;
-  border-bottom: 2px solid #9e0303;
+  border-bottom: 2px solid #0f0101;
   margin-right: 10px;
 }
-.borderbottom2T2 {
+.borderbottom2T3 {
   width: 200px;
   float: right;
   border: 0;
-  border-bottom: 2px solid #9e0303;
+  border-bottom: 2px solid #0a0101;
   margin-left: 10px;
 }

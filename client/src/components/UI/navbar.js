@@ -44,7 +44,7 @@ const Navbar = ({ auth: { isAuthenticated, loading, role }, logout }, props) => 
 
                                         <li className="nav-item active">
                                             <Link className="nav-link" to="/dashboard">
-                                                Dashboard
+                                                Home
                                                 </Link>
 
                                         </li>
@@ -77,6 +77,12 @@ const Navbar = ({ auth: { isAuthenticated, loading, role }, logout }, props) => 
                                                 <Link className="dropdown-item" to="/student/view-student">View Students</Link>
 
                                             </div>
+
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" to="/admin/issued_certificate">
+                                                Certificate
+                                            </Link>
 
                                         </li>
 

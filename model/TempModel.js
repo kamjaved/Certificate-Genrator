@@ -5,7 +5,12 @@ const TempModel = new mongoose.Schema({
 
     companyName: {
         type: String,
-        required: [true, ' Must have Company name'],
+
+    },
+
+    user: {
+        type: mongoose.Schema.ObjectId,
+        ref: "User"
     },
 
     username: {
@@ -51,7 +56,13 @@ const TempModel = new mongoose.Schema({
     }
 });
 
-
+TempModel.pre(/^find/, function (next) {
+    this.populate({
+        path: "user",
+        select: "companyName"
+    });
+    next();
+});
 
 
 module.exports = mongoose.model('temp', TempModel);
